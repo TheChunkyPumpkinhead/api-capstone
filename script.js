@@ -20,8 +20,8 @@ function generateArtistsListItem(item) {
 
 function generateArtistsListString(responseJSON) {
   const events = responseJSON._embedded.events;
-  if (!responseJSON._embedded){
-    return
+  if (!responseJSON._embedded) {
+    return;
   }
   const artistsListString = events.map(event => generateArtistsListItem(event));
 
@@ -32,7 +32,7 @@ function generateArtistsListString(responseJSON) {
 
 function displayArtists(artistsJSON) {
   console.log(artistsJSON);
-artistsJSON= JSON.parse(artistsJSON.contents)
+  artistsJSON = JSON.parse(artistsJSON.contents);
   $('#results-list').empty();
 
   const statesSelected = $('#js-search-state').val();
@@ -60,7 +60,7 @@ function formatQueryParameters(params) {
 const apiKey = 'tgNA06Gb6i1GSqAlRbVafAZqytcLhKBV';
 
 function getArtists(searchState, searchCity, searchRadius) {
-  // mentor issues to check do i really need heroku
+  // mentor issues to check do i  need heroku
   const endpointURL = 'https://api.allorigins.win/get?url=https://app.ticketmaster.com/discovery/v2/events';
   const params = {
     apikey: apiKey,
@@ -99,11 +99,11 @@ function getArtists(searchState, searchCity, searchRadius) {
     );
 }
 
-async function fetchEvents(url) {
+function fetchEvents(url) {
   let response = await fetch(url).then(r => r.json());
-  response= JSON.parse(response.contents)
-  if (!response._embedded){
-    return
+  response = JSON.parse(response.contents);
+  if (!response._embedded) {
+    return;
   }
   const events = response._embedded.events;
 

@@ -27,7 +27,7 @@ h3 {
 }
 
 .button {
-  background-color:cornflowerblue;
+  background-color: cornflowerblue;
   border: none;
   border-radius: 12px;
   color: white;
@@ -52,5 +52,5 @@ input[type=text]:focus {
 /* Mobile */
 
 @media {
-
+  
 }
