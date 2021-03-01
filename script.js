@@ -37,7 +37,6 @@ function displayArtists(artistsJSON) {
 
   const statesSelected = $('#js-search-state').val();
   $('#js-state-names').text(statesSelected.toUpperCase());
-
   const citySelected = $('#js-search-city').val();
   $('#js-city-names').text(citySelected.toUpperCase());
 
@@ -46,6 +45,7 @@ function displayArtists(artistsJSON) {
 
 
   $('#results').removeClass('hidden');
+
 }
 
 
@@ -100,14 +100,14 @@ function getArtists(searchState, searchCity, searchRadius) {
 }
 
 function fetchEvents(url) {
-  let response = await fetch(url).then(r => r.json());
+  let response =  fetch(url).then(r => r.json());
   response = JSON.parse(response.contents);
   if (!response._embedded) {
     return;
   }
   const events = response._embedded.events;
 
-  const details = await Promise.all(
+  const details = Promise.all(
     events.map(
       e => fetch(`https://api.allorigins.win/get?url=https://app.ticketmaster.com/discovery/v2/events/${e.id}?apikey=${apiKey}`)
         .then(r => r.json()
