@@ -1,6 +1,7 @@
 'use strict';
 
 
+
 function generateArtistsListItem(item) {
   console.log("generateArtistsListItem() ran");
 
@@ -37,6 +38,7 @@ function displayArtists(artistsJSON) {
 
   const statesSelected = $('#js-search-state').val();
   $('#js-state-names').text(statesSelected.toUpperCase());
+  
   const citySelected = $('#js-search-city').val();
   $('#js-city-names').text(citySelected.toUpperCase());
 
@@ -61,11 +63,11 @@ const apiKey = 'tgNA06Gb6i1GSqAlRbVafAZqytcLhKBV';
 
 function getArtists(searchState, searchCity, searchRadius) {
   // mentor issues to check do i  need heroku
-  const endpointURL = 'https://api.allorigins.win/get?url=https://app.ticketmaster.com/discovery/v2/events';
+  const endpointURL = ' https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2';
   const params = {
-    apikey: apiKey,
+    apiKey: apiKey,
     stateCode: searchState,
-    city: searchCity,
+    city: `[${searchCity}]`,
     radius: searchRadius
   };
 
@@ -99,18 +101,19 @@ function getArtists(searchState, searchCity, searchRadius) {
     );
 }
 
-function fetchEvents(url) {
-  let response =  fetch(url).then(r => r.json());
-  response = JSON.parse(response.contents);
+async function fetchEvents(url) {
+  let response =  fetch(url).then(res => res.json())
+  .then(data => console.log(data));
+
   if (!response._embedded) {
     return;
   }
   const events = response._embedded.events;
 
-  const details = Promise.all(
+  const details =  Promise.all(
     events.map(
-      e => fetch(`https://api.allorigins.win/get?url=https://app.ticketmaster.com/discovery/v2/events/${e.id}?apikey=${apiKey}`)
-        .then(r => r.json()
+      e => fetch(`https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/#search-events-v2${e.id}?apikey=${apiKey}`)
+        .then(res => res.json()
         )
     )
   );
@@ -125,10 +128,14 @@ function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     const searchState = $('#js-search-state').val();
-    const searchCity = $('#js-search-city').val();
+    const searchCity= $('#js-search-city').val();
     const searchRadius = $('#js-search-radius').val();
-    getArtists(searchState, searchCity, searchRadius);
+    getArtists(searchState, `[${searchCity}]`, searchRadius);
   });
+  console.log($('#js-search-radius').val())
+  console.log($('#js-search-city').val())
+  console.log($('#js-search-state').val())
+
 }
 
 

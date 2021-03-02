@@ -2,55 +2,55 @@
 
 <html lan="en">
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>API Capstone</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>API Capstone</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
 
 
-  <body>
+<body>
 
-        <header class="center">
-            <h1>Entertainment Finder</h1>
-            <h2>Find artists playing near you </h2>
-        </header>
+  <header class="center">
+    <h1>Entertainment Finder</h1>
+    <h2>Find artists playing near you </h2>
+  </header>
 
 
-        <div class="container">
-  
-          <form id="js-form">
-              <label for="js-search-term">City </label>
-              <input type="text" name="search-term" id="js-search-city" placeholder="ex: San Deigo " required>
+  <div class="container">
 
-              <label for="js-search-term">State </label>
-              <input type="text" name="search-term" id="js-search-state" placeholder="ex: CA, TX, AZ " required>
-  
-              <label for="js-search-radius">Distance in Miles</label>
-              <input type="number" name="search-results-limit" id="js-search-radius" 
-              min="50" step="10" value="100" max="150" required>
-            
-  
-              <input class="button" type="submit" value="Find Artists">
-          </form>
-  
-          <p id="js-error-message" class="error-message"></p>
+    <form id="js-form">
+      <label for="js-search-term">City </label>
+      <input type="text" name="search-term" id="js-search-city" placeholder="ex: San Deigo " required>
 
-          <section id="results" class="hidden">
-            <h2>Search results:</h2>
-            <input type="submit" value="Generate List" class="hidden">
-            <ul id="results-list">
-            </ul>
-          </section>
+      <label for="js-search-term">State </label>
+      <input type="text" name="search-term" id="js-search-state" placeholder="ex: CA, TX, AZ " required>
 
-      </div>
+      <label for="js-search-radius">Distance in Miles</label>
+      <input type="number" name="search-results-limit" id="js-search-radius" min="50" step="10" value="100" max="150"
+        required>
 
-      
-      <script
+
+      <input class="button" type="submit" value="Find Artists">
+    </form>
+
+    <p id="js-error-message" class="error-message"></p>
+
+    <section id="results" class="hidden">
+      <h2>Search results:</h2>
+      <input type="submit" value="Generate List" class="hidden">
+      <ul id="results-list">
+      </ul>
+    </section>
+
+  </div>
+
+
+  <script
       src="https://code.jquery.com/jquery-3.5.1.js"
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"></script>
