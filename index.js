@@ -90,12 +90,21 @@ function getFourSquareData() {
 
 function displayResults(result) {
   let image;
+  // console.log('results',  result.venue.photos.groups[0].items[0].suffix);
+
+  // console.log('first', image);
+  //  it isn't getting through this statement
   if (result.venue.photos.groups[0]) {
     image = result.venue.photos.groups[0].items[0].suffix;
+    // console isn't logging anything
+    console.log('second', image);
+    // console.log('results',  result.venue.photos.groups[0].items[0].suffix);
+
+
   }
   return `
       <div class="result col-3">
-          <div class="result-image" style="background-image: url(https://igx.4sqi.net/img/general/width960${image})" ;>
+          <div class="result-image" style="background-image: url(https://igx.4sqi.net/img/general/width960${image})" >
           </div>
           <div class="result-description">
               <h2 class="result-name"><a href="${result.venue.url}" target="_blank">${result.venue.name}</a></h2>
