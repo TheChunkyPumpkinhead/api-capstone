@@ -1,60 +1,52 @@
 <!DOCTYPE html>
-
-<html lan="en">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>API Capstone</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
-</head>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Event Planner" />
+    <title>Event Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Megrim|Montserrat:400,600|Raleway:400,700" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    </head>
 
 <body>
+    <main role=main>
+        <div class="start-display" id="start-page">
+            <header class="row" role="banner">
+                <h1 class="logo">Event Planner</h1>
+              Plan your next event by finding out the current weather and find what to do in that city!</p>
+            </header>
 
-  <header class="center">
-    <h1>Entertainment Finder</h1>
-    <h2>Find artists playing near you </h2>
-  </header>
+            <form action="#" class="search-form row" id="search-query-form">
+                <input type="text" placeholder="San Diego" class="search-query" id="search-term" required>
+                <button type="submit" class="submit-button">Search</button>
+            </form>
+        </div>
 
+        <section class="weather row" id="weather-display">
 
-  <div class="container">
+        </section>
 
-    <form id="js-form">
-      <label for="js-search-term">City </label>
-      <input type="text" name="search-term" id="js-search-city" placeholder="ex: San Deigo " required>
+        <nav role="navigation" class="navigation hide" id="results-navigation">
+            <div class="options row">
+                <button class="category-button" id="food-button">FOOD</button>
+                <button class="category-button" id="nightlife-button">NIGHTLIFE</button>
+               
+            </div>
+        </nav>
 
-      <label for="js-search-term">State </label>
-      <input type="text" name="search-term" id="js-search-state" placeholder="ex: CA, TX, AZ " required>
+        <section id="foursquare-results" class="row">
 
-      <label for="js-search-radius">Distance in Miles</label>
-      <input type="number" name="search-results-limit" id="js-search-radius" min="50" step="10" value="100" max="150"
-        required>
+        </section>
 
+     
+        </footer>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src=""></script>
+</body>
 
-      <input class="button" type="submit" value="Find Artists">
-    </form>
-
-    <p id="js-error-message" class="error-message"></p>
-
-    <section id="results" class="hidden">
-      <h2>Search results:</h2>
-      <input type="submit" value="Generate List" class="hidden">
-      <ul id="results-list">
-      </ul>
-    </section>
-
-  </div>
-
-
-  <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"></script>
-
-    <script src="script.js"></script>
-  </body>
 </html>

@@ -1,18 +1,10 @@
 # api-capstone
 https://thechunkypumpkinhead.github.io/api-capstone/
 
-Technical Requirements
-Implementation details are left entirely up to you, but at a minimum your app must meet the following requirements:
-
-Use Fetch to asynchronously load data from one or more APIs
-Use jQuery's DOM traversal and manipulation functionality to display the data from the API to the user in an interesting way
-Use jQuery's event listening capabilities to respond to user actions
-Technical Requirements
-Implementation details are left entirely up to you, but at a minimum your app must meet the following requirements:
-
-Use Fetch to asynchronously load data from one or more APIs
-Use jQuery's DOM traversal and manipulation functionality to display the data from the API to the user in an interesting way
-Use jQuery's event listening capabilities to respond to user actions
+Project built using OpenWeatherMap and Eventful API 
 
 
+The app was built using HTML5, CSS, JavaScript and jQuery.
+The app is fully responsive.
 
+fee3ae2602624a9d9b6a079c9fd71a1e  api
