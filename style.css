@@ -1,8 +1,8 @@
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
-  background-image: url('simple-pic.jpeg');
-
+  background-image: url( 'api-cap.jpeg');
+ 
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -40,7 +40,7 @@ header {
 
 .start-display {
   height: 100vh;
-  background-image: url("background.jpg");
+  background-image: url('simple-pic.jpeg');
 
   background-size: cover;
   background-repeat: no-repeat;
