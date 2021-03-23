@@ -1,4 +1,4 @@
-const WEATHER_SEARCH_URL = 'http://api.weatherbit.io/v2.0/current?key=fee3ae2602624a9d9b6a079c9fd71a1e&city=';
+const WEATHER_SEARCH_URL = 'https://api.weatherbit.io/v2.0/current?key=fee3ae2602624a9d9b6a079c9fd71a1e&city=';
 const FOURSQUARE_SEARCH_URL = 'https://api.foursquare.com/v2/venues/explore?&client_id=4YC5WWSFAGURCS15AFPKE5PFYPWUNUD2ZN5SS0JY30KVEGNC&client_secret=ZVDCWQC1VRTSZUH2N1GOEUKGGI4NNLAHS3KH4ZFFID2QJ15F&v=20170915';
 
 
