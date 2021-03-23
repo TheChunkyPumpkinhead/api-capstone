@@ -1,4 +1,4 @@
-const WEATHER_SEARCH_URL = 'http://api.weatherbit.io/v2.0/current?key=fee3ae2602624a9d9b6a079c9fd71a1e&city=';
+const WEATHER_SEARCH_URL = 'https://api.weatherbit.io/v2.0/current?key=fee3ae2602624a9d9b6a079c9fd71a1e&city=';
 const FOURSQUARE_SEARCH_URL = 'https://api.foursquare.com/v2/venues/explore?&client_id=4YC5WWSFAGURCS15AFPKE5PFYPWUNUD2ZN5SS0JY30KVEGNC&client_secret=ZVDCWQC1VRTSZUH2N1GOEUKGGI4NNLAHS3KH4ZFFID2QJ15F&v=20170915';
 
 
@@ -95,7 +95,7 @@ function displayResults(result) {
   // console.log('first', image);
   //  it isn't getting through this statement
   if (result.venue.photos.groups[0]) {
-    image = result.venue.photos.groups[0].items[0].suffix;
+    image = result.venue.photos[0].groups[0].items[0].suffix;
     // console isn't logging anything
     console.log('second', image);
     // console.log('results',  result.venue.photos.groups[0].items[0].suffix);
@@ -104,7 +104,7 @@ function displayResults(result) {
   }
   return `
       <div class="result col-3">
-          <div class="result-image" style="background-image: url(https://igx.4sqi.net/img/general/width960${image})" >
+          <div class="result-image" style="background-image: url(https://igx.4sqi.net/img/general/width960${result.image})" >
           </div>
           <div class="result-description">
               <h2 class="result-name"><a href="${result.venue.url}" target="_blank">${result.venue.name}</a></h2>
