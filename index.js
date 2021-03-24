@@ -44,10 +44,10 @@ function displayWeather(response) {
       <h1><strong>Current Weather for ${data.city_name}</strong></h1>
     
       
-      <p style="color:steelblue;" ">Description:</p><p"> ${data.weather.description}</p>
-      <p style="color:steelblue;">Temperature:</p><p> ${data.temp} &#8457; / ${(((data.temp) - 32) * (5 / 9)).toFixed(2)} &#8451;</p>
-      <p style="color:steelblue;">Min. Temperature:</p><p> ${data.min_temp} &#8457; / ${((data.min_temp - 32) * (5 / 9)).toFixed(2)}&#8451</p>
-      <p style="color:steelblue;">Max. Temperature:</p><p> ${data.max_temp} &#8457; / ${((data.max_temp - 32) * (5 / 9)).toFixed(2)} &#8451</p>
+      <p style="color:black" ">Description:</p><p"> ${data.weather.description}</p>
+      <p style="color:black;">Temperature:</p><p> ${data.temp} &#8457; / ${(((data.temp) - 32) * (5 / 9)).toFixed(2)} &#8451;</p>
+      <p style="color:black;">Min. Temperature:</p><p> ${data.min_temp} &#8457; / ${((data.min_temp - 32) * (5 / 9)).toFixed(2)}&#8451</p>
+      <p style="color:black;">Max. Temperature:</p><p> ${data.max_temp} &#8457; / ${((data.max_temp - 32) * (5 / 9)).toFixed(2)} &#8451</p>
    
   </div>
 `;
@@ -90,7 +90,7 @@ function getFourSquareData() {
 
 function displayResults(result) {
   let image;
-  // console.log('results',  result.venue.photos.groups[0].items[0].suffix);
+  console.log('results',  result);
 
   // console.log('first', image);
   //  it isn't getting through this statement
@@ -104,12 +104,11 @@ function displayResults(result) {
   }
   return `
       <div class="result col-3">
-          <div class="result-image" style="background-image: url(https://igx.4sqi.net/img/general/width960${result.image})" >
-          </div>
+        
           <div class="result-description">
-              <h2 class="result-name"><a href="${result.venue.url}" target="_blank">${result.venue.name}</a></h2>
+              <h2 class="result-name"><a href="https://foursquare.com/v/link/${result.venue.id}" target="_blank">${result.venue.name}</a></h2>
               <span class="icon">
-                  <img src="${result.venue.categories[0].icon.prefix}bg_32${result.venue.categories[0].icon.suffix}" alt="category-icon">
+                  <img src="${result.venue.categories[0].icon.prefix}bg_32${result.venue.categories[0].icon.suffix}" alt="category-icon ${result.venue.id}">
               </span>
               <span class="icon-text">
                   ${result.venue.categories[0].name}

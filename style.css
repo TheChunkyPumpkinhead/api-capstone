@@ -19,7 +19,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #4682b4;
+  color: #2a5170;
 }
 
 
@@ -27,12 +27,13 @@ a {
 
 header p {
   font-size: 15px;
+  background-color: linen;
 }
 
 
 
 header {
-  background-color:lightskyblue;
+  background-color:rgb(129, 200, 248);
   padding: 10px;
   border-radius: 10px;
   width: 80%
@@ -82,7 +83,7 @@ form button {
 }
 
 form a {
-  color: rgb(143, 27, 27);
+  color: rgb(165, 22, 22);
   text-decoration: none;
 }
 
@@ -97,7 +98,7 @@ form a {
 
 .weather-results h1 {
   font-size: 40px;
-  color: black;
+  color:rgb(36, 33, 31);
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -109,7 +110,7 @@ form a {
   margin: 10px;
   padding: 10px;
   width: 100%;
-  background:lightskyblue;
+  background:#dfcdda;
   border-radius: 5px;
 }
 
@@ -152,13 +153,13 @@ div .result-image {
   margin: 10px;
   padding: 10px;
   width: 100%;
-  background: rgba(230, 223, 223, 0.7);
+  background: rgba(170, 170, 170, 0.7);
   border-radius: 5px;
 }
 
 .result-description {
   padding: 10px;
-  text-align: justify;
+  text-align: left;
   overflow: hidden;
   font-size: 0.9em;
 }
@@ -173,12 +174,13 @@ div .result-image {
   height: 32px;
   padding: 0;
   vertical-align: top;
-  background-color: #ccc;
+  background-color: rgb(129, 53, 53);
   border-radius: 5px;
 }
 
 #foursquare-results span.icon-text {
   padding: 8px 4px 0 4px;
+  background-color: rgb(216, 132, 216);
 }
 
 
