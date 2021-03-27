@@ -19,26 +19,23 @@ function getWeatherData() {
 
 
 
-  $.ajax({
-    url: WEATHER_SEARCH_URL + `${city}&`,
-
-    'async': true,
-    'crossDomain': true,
-    // dataType: 'jsonp',
-    type: 'GET',
-    success: function (data) {
-      console.log(data);
+  fetch(
+   WEATHER_SEARCH_URL + `${city}&`,
+  )
+    .then(res => res.json())
+    .then(function (data) {
+    
       let widget = displayWeather(data);
       $('#weather-display').html(widget);
       scrollPageTo('#weather-display', 15);
-    }
-  });
+
+    });
 }
 
 function displayWeather(response) {
 
   data = response.data[0];
-  console.log(data);
+
   return `
   <div class="weather-results">
       <h1><strong>Current Weather for ${data.city_name}</strong></h1>
@@ -58,18 +55,20 @@ function getFourSquareData() {
   $('.category-button').click(function () {
     let city = $('.search-query').val();
     let category = $(this).text();
-    $.ajax(FOURSQUARE_SEARCH_URL, {
-      data: {
-        near: city,
-        venuePhotos: 1,
-        limit: 9,
-        query: 'recommended',
-        section: category,
-      },
-      dataType: 'json',
-      type: 'GET',
-      success: function (data) {
-        console.log(data.response.groups);
+    let url = new URL (FOURSQUARE_SEARCH_URL);
+    const params = {
+      near: city,
+      venuePhotos: 1,
+      limit: 9,
+      query: 'recommended',
+      section: category,
+    };
+
+    Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    fetch(url)
+      .then(res => res.json())
+      .then(function (data) {
+      
         try {
           let results = data.response.groups[0].items.map(function (item, index) {
             return displayResults(item);
@@ -77,28 +76,24 @@ function getFourSquareData() {
           $('#foursquare-results').html(results);
           scrollPageTo('#foursquare-results', 15);
         } catch (e) {
-          console.log(e);
+       
           $('#foursquare-results').html("<div class='result'><p>No Results Found.</p></div>");
         }
-      },
-      error: function () {
+      })
+      .catch(function () {
         $('#foursquare-results').html("<div class='result'><p>No Results Found.</p></div>");
-      }
-    });
+      });
   });
 }
 
 function displayResults(result) {
   let image;
-  console.log('results',  result);
+ 
 
-  // console.log('first', image);
-  //  it isn't getting through this statement
+
   if (result.venue.photos.groups[0]) {
     image = result.venue.photos[0].groups[0].items[0].suffix;
-    // console isn't logging anything
-    console.log('second', image);
-    // console.log('results',  result.venue.photos.groups[0].items[0].suffix);
+   
 
 
   }
